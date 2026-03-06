@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Виртуальная Экотропа</title>
+    <script>
+      (function () {
+        var l = window.location;
+        var origin = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+        var repoBase = '/ecoroute';
+        var path = l.pathname;
+
+        if (path.indexOf(repoBase + '/') === 0) {
+          path = path.slice(repoBase.length);
+        }
+
+        var target =
+          origin +
+          repoBase +
+          '/?/' +
+          path.replace(/^\//, '') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash;
+
+        l.replace(target);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
