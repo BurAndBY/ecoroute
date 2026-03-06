@@ -1,15 +1,6 @@
-# Kaleo Template
+# Virtual EcoRoute
 
 An editorial, earth-toned single-page website template with premium scroll-driven animations. Built with React, TypeScript, Tailwind CSS, GSAP, and Lenis smooth scrolling. Features a warm organic color palette (sand, cream, terracotta, charcoal) with serif/sans-serif typography pairing.
-
-## Features
-
-- **Hero Section** - Full-viewport hero with Ken Burns background, parallax scrolling, and fade-out text
-- **Narrative Text** - Scroll-triggered text reveal with spinning star decorations
-- **Card Stack** - Pinned scroll-driven card gallery with stacking/parallax effect
-- **Breath Section** - Cinematic image banner with scale-up scroll animation and rounded corners
-- **ZigZag Grid** - Alternating image/text layout with internal parallax on images
-- **Footer** - Dark footer with magnetic button effect, parallax background, and contact grid
 
 ## Tech Stack
 
