@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { stationsGridConfig } from '../config';
 import { MapPin } from 'lucide-react';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,13 +96,13 @@ const StationsGrid = () => {
             <a
               key={station.id}
               ref={(el) => { cardsRef.current[index] = el; }}
-              href={`/stations/${station.id}`}
+              href={withBase(`/stations/${station.id}`)}
               className="group relative overflow-hidden rounded-2xl bg-kaleo-cream shadow-soft hover:shadow-deep transition-shadow duration-300 cursor-pointer"
             >
               {/* Image */}
               <div className="relative aspect-[4/3] overflow-hidden">
                 <img
-                  src={station.image}
+                  src={withBase(station.image)}
                   alt={station.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

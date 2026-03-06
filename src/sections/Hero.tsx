@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { heroConfig } from '../config';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -105,7 +106,7 @@ const Hero = () => {
         style={{ willChange: 'transform' }}
       >
         <img
-          src={heroConfig.backgroundImage}
+          src={withBase(heroConfig.backgroundImage)}
           alt={heroConfig.backgroundAlt}
           className="w-full h-full object-cover ken-burns"
         />

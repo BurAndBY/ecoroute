@@ -1,6 +1,7 @@
 import { ArrowLeft, ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import { useState } from 'react';
 import { stationsGridConfig } from '../config';
+import { withBase } from '../lib/paths';
 
 interface StationPageProps {
   stationId: number;
@@ -577,7 +578,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
       <main className="min-h-screen bg-kaleo-sand text-kaleo-earth">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <a
-            href="/"
+            href={withBase('/')}
             className="inline-flex items-center gap-2 font-body text-sm text-kaleo-terracotta hover:underline"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -602,14 +603,14 @@ const StationPage = ({ stationId }: StationPageProps) => {
       <section className="relative">
         <div className="absolute inset-0 bg-gradient-to-t from-kaleo-charcoal/70 via-kaleo-charcoal/25 to-kaleo-charcoal/10" />
         <img
-          src={station.image}
+          src={withBase(station.image)}
           alt={station.title}
           className="h-[65vh] w-full object-cover md:h-[72vh]"
         />
         <div className="absolute inset-x-0 bottom-0">
           <div className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8 md:pb-16">
             <a
-              href="/"
+              href={withBase('/')}
               className="mb-6 inline-flex items-center gap-2 rounded-full bg-kaleo-cream/90 px-4 py-2 font-body text-xs uppercase tracking-[0.18em] text-kaleo-earth backdrop-blur-sm transition hover:bg-kaleo-cream"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -661,7 +662,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
 
                     <figure className="mt-6 overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60">
                       <img
-                        src={plant.image}
+                        src={withBase(plant.image)}
                         alt={plant.imageAlt}
                         className="h-64 w-full object-cover md:h-80"
                       />
@@ -688,7 +689,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                         {task.images.map((image) => (
                           <img
                             key={image}
-                            src={image}
+                            src={withBase(image)}
                             alt={`Иллюстрация к заданию ${task.id}`}
                             className="h-64 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                           />
@@ -716,7 +717,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                     хлоропластов в клетках хвои ели.
                   </p>
                   <img
-                    src="/hvoinaya/image5.jpeg"
+                    src={withBase('/hvoinaya/image5.jpeg')}
                     alt="Таблица для задания 5"
                     className="mt-4 max-h-[34rem] w-full rounded-xl border border-kaleo-earth/10 bg-white object-contain p-2"
                   />
@@ -791,7 +792,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
 
                     <figure className="mt-6 overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60">
                       <img
-                        src={plant.image}
+                        src={withBase(plant.image)}
                         alt={plant.imageAlt}
                         className="h-64 w-full object-cover md:h-80"
                       />
@@ -818,7 +819,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                         {task.images.map((image) => (
                           <img
                             key={image}
-                            src={image}
+                            src={withBase(image)}
                             alt={`Иллюстрация к заданию ${task.id}`}
                             className="h-64 w-full rounded-xl border border-kaleo-earth/10 object-contain bg-white p-2"
                           />
@@ -847,7 +848,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   <article key={photo.id} className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
                     <figure className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60">
                       <img
-                        src={photo.image}
+                        src={withBase(photo.image)}
                         alt={photo.imageAlt}
                         className="h-72 w-full object-cover md:h-96"
                       />
@@ -873,7 +874,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                         {task.images.map((image) => (
                           <img
                             key={image}
-                            src={image}
+                            src={withBase(image)}
                             alt={`Иллюстрация к заданию ${task.id}`}
                             className="h-64 w-full rounded-xl border border-kaleo-earth/10 object-contain bg-white p-2"
                           />
@@ -906,7 +907,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                         className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60"
                       >
                         <img
-                          src={photo.image}
+                          src={withBase(photo.image)}
                           alt={photo.imageAlt}
                           className="h-72 w-full object-cover md:h-80"
                         />
@@ -934,7 +935,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
 
                     {experiment.image ? (
                       <img
-                        src={experiment.image}
+                        src={withBase(experiment.image)}
                         alt={`Иллюстрация: ${experiment.title}`}
                         className="mt-4 h-64 w-full rounded-xl border border-kaleo-earth/10 object-contain bg-white p-2"
                       />
@@ -969,7 +970,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                       {task.images.map((image) => (
                         <img
                           key={image}
-                          src={image}
+                          src={withBase(image)}
                           alt={`Иллюстрация к заданию ${task.id}`}
                           className="h-64 w-full rounded-xl border border-kaleo-earth/10 object-contain bg-white p-2"
                         />
@@ -992,7 +993,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
           <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
             {previousStation ? (
               <a
-                href={`/stations/${previousStation.id}`}
+                href={withBase(`/stations/${previousStation.id}`)}
                 className="group rounded-2xl bg-kaleo-cream p-5 shadow-soft transition hover:shadow-deep"
               >
                 <span className="font-body text-xs uppercase tracking-[0.14em] text-kaleo-terracotta">
@@ -1014,7 +1015,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
 
             {nextStation ? (
               <a
-                href={`/stations/${nextStation.id}`}
+                href={withBase(`/stations/${nextStation.id}`)}
                 className="group rounded-2xl bg-kaleo-cream p-5 shadow-soft transition hover:shadow-deep"
               >
                 <span className="font-body text-xs uppercase tracking-[0.14em] text-kaleo-terracotta">
@@ -1041,3 +1042,4 @@ const StationPage = ({ stationId }: StationPageProps) => {
 };
 
 export default StationPage;
+

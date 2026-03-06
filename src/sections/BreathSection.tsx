@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { breathSectionConfig } from '../config';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,7 +83,7 @@ const BreathSection = () => {
           {/* Background Image (simulating video) */}
           <div className="relative aspect-[16/9] md:aspect-[21/9]">
             <img
-              src={breathSectionConfig.backgroundImage}
+              src={withBase(breathSectionConfig.backgroundImage)}
               alt={breathSectionConfig.backgroundAlt}
               className="w-full h-full object-cover"
             />

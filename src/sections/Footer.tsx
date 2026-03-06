@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, ArrowUpRight, Instagram, Facebook } from 'lucide-react';
 import { footerConfig } from '../config';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -153,7 +154,7 @@ const Footer = () => {
         style={{ willChange: 'transform' }}
       >
         <img
-          src="/footer-cabin.jpg"
+          src={withBase('/footer-cabin.jpg')}
           alt=""
           className="w-full h-full object-cover"
         />

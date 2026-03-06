@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { zigZagGridConfig, type ZigZagGridItem } from '../config';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,7 +83,7 @@ const GridItem = ({
         <div className="relative aspect-[4/3] overflow-hidden">
           <img
             ref={imageRef}
-            src={item.image}
+            src={withBase(item.image)}
             alt={item.imageAlt}
             className="w-full h-[120%] object-cover"
             style={{

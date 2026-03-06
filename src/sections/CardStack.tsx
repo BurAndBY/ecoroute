@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { cardStackConfig } from '../config';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -113,7 +114,7 @@ const CardStack = () => {
                 {/* Image */}
                 <div className="absolute inset-0 overflow-hidden">
                   <img
-                    src={card.image}
+                    src={withBase(card.image)}
                     alt={card.title}
                     className="w-full h-full object-cover"
                   />

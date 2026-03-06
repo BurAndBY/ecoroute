@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import useLenis from './hooks/useLenis';
 import { siteConfig } from './config';
+import { stripBaseFromPathname } from './lib/paths';
 
 // Sections
 import Navigation from './sections/Navigation';
@@ -46,7 +47,8 @@ function App() {
     };
   }, []);
 
-  const stationPathMatch = window.location.pathname.match(/^\/stations\/(\d+)\/?$/);
+  const relativePathname = stripBaseFromPathname(window.location.pathname);
+  const stationPathMatch = relativePathname.match(/^\/stations\/(\d+)\/?$/);
   const stationId = stationPathMatch ? Number(stationPathMatch[1]) : null;
 
   if (stationId !== null) {
