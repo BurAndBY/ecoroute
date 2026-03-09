@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook, Send } from 'lucide-react';
 import { footerConfig } from '../config';
 import { withBase } from '../lib/paths';
 
@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const iconMap: Record<string, typeof Instagram> = {
   instagram: Instagram,
   facebook: Facebook,
+  telegram: Send,
 };
 
 const Footer = () => {
