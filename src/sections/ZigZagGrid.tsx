@@ -18,6 +18,10 @@ const GridItem = ({
   const imageRef = useRef<HTMLImageElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
+  const itemHrefIsExternal = item.href ? /^https?:\/\//.test(item.href) : false;
+  const showSingleLink = Boolean(item.href) && (!item.links || item.links.length === 0);
+  const useContainedImage = item.id === 'chatbot';
+
   useEffect(() => {
     const itemEl = itemRef.current;
     const imageContainer = imageContainerRef.current;
@@ -80,18 +84,39 @@ const GridItem = ({
           item.reverse ? 'lg:order-2' : 'lg:order-1'
         }`}
       >
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div
+          className={`relative overflow-hidden rounded-3xl ${
+            useContainedImage ? 'mx-auto aspect-[9/16] max-w-[24rem] bg-kaleo-charcoal/5 p-4' : 'aspect-[4/3]'
+          }`}
+        >
           <img
             ref={imageRef}
             src={withBase(item.image)}
             alt={item.imageAlt}
-            className="w-full h-[120%] object-cover"
+            className={`w-full ${
+              useContainedImage ? 'h-full object-contain' : 'h-[120%] object-cover'
+            }`}
             style={{
               willChange: 'transform',
-              transform: 'scale(1.1)',
+              transform: useContainedImage ? 'scale(1)' : 'scale(1.1)',
             }}
           />
         </div>
+        {showSingleLink ? (
+          <div className="mt-5 flex justify-center">
+            <a
+              href={withBase(item.href!)}
+              target={itemHrefIsExternal ? '_blank' : undefined}
+              rel={itemHrefIsExternal ? 'noopener noreferrer' : undefined}
+              className="inline-flex min-w-[16rem] items-center justify-center gap-3 rounded-full border border-kaleo-terracotta bg-kaleo-terracotta px-8 py-4 font-body text-base uppercase tracking-[0.14em] text-kaleo-cream transition-colors hover:bg-kaleo-earth hover:border-kaleo-earth"
+            >
+              {item.ctaLabel ?? 'Подробнее'}
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ) : null}
       </div>
 
       {/* Text Column */}
@@ -109,6 +134,32 @@ const GridItem = ({
           {item.description}
         </p>
 
+        {item.detailTitle ? (
+          <div className="mt-6 rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream/70 p-5">
+            <p className="font-body text-xs uppercase tracking-[0.14em] text-kaleo-terracotta">
+              {item.detailLabel ?? 'Подробнее'}
+            </p>
+            <p className="mt-2 font-body text-sm leading-relaxed text-kaleo-earth md:text-base">
+              {item.detailTitle}
+            </p>
+            {item.bulletPoints && item.bulletPoints.length > 0 ? (
+              <ul className="mt-4 space-y-2">
+                {item.bulletPoints.map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-start gap-3 rounded-xl border border-kaleo-earth/8 bg-kaleo-sand/80 px-4 py-3"
+                  >
+                    <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-kaleo-terracotta" />
+                    <span className="font-body text-sm leading-relaxed text-kaleo-earth/85">
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        ) : null}
+
         {item.links && item.links.length > 0 ? (
           <div className="mt-8 flex flex-wrap gap-3">
             {item.links.map((link) => (
@@ -124,16 +175,6 @@ const GridItem = ({
               </a>
             ))}
           </div>
-        ) : item.href ? (
-          <a
-            href={withBase(item.href)}
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-kaleo-terracotta/40 bg-kaleo-cream px-5 py-2 font-body text-xs uppercase tracking-[0.14em] text-kaleo-earth transition-colors hover:border-kaleo-terracotta hover:bg-kaleo-terracotta/10"
-          >
-            {item.ctaLabel ?? 'Подробнее'}
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
         ) : null}
 
         {/* Decorative line */}
