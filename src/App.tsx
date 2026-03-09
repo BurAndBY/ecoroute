@@ -16,6 +16,8 @@ import Achievements from './sections/Achievements';
 import Cooperation from './sections/Cooperation';
 import Footer from './sections/Footer';
 import StationPage from './pages/StationPage';
+import ExcursionSpringPage from './pages/ExcursionSpringPage';
+import ExcursionWinterPage from './pages/ExcursionWinterPage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,10 +51,20 @@ function App() {
 
   const relativePathname = stripBaseFromPathname(window.location.pathname);
   const stationPathMatch = relativePathname.match(/^\/stations\/(\d+)\/?$/);
+  const isExcursionSpringPage = /^\/excursions\/spring-organisms\/?$/.test(relativePathname);
+  const isExcursionWinterPage = /^\/excursions\/winter-organisms\/?$/.test(relativePathname);
   const stationId = stationPathMatch ? Number(stationPathMatch[1]) : null;
 
   if (stationId !== null) {
     return <StationPage stationId={stationId} />;
+  }
+
+  if (isExcursionSpringPage) {
+    return <ExcursionSpringPage />;
+  }
+
+  if (isExcursionWinterPage) {
+    return <ExcursionWinterPage />;
   }
 
   return (

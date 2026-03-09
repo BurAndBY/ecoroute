@@ -109,6 +109,33 @@ const GridItem = ({
           {item.description}
         </p>
 
+        {item.links && item.links.length > 0 ? (
+          <div className="mt-8 flex flex-wrap gap-3">
+            {item.links.map((link) => (
+              <a
+                key={link.href}
+                href={withBase(link.href)}
+                className="inline-flex items-center gap-2 rounded-full border border-kaleo-terracotta/40 bg-kaleo-cream px-5 py-2 font-body text-xs uppercase tracking-[0.14em] text-kaleo-earth transition-colors hover:border-kaleo-terracotta hover:bg-kaleo-terracotta/10"
+              >
+                {link.label}
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            ))}
+          </div>
+        ) : item.href ? (
+          <a
+            href={withBase(item.href)}
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-kaleo-terracotta/40 bg-kaleo-cream px-5 py-2 font-body text-xs uppercase tracking-[0.14em] text-kaleo-earth transition-colors hover:border-kaleo-terracotta hover:bg-kaleo-terracotta/10"
+          >
+            {item.ctaLabel ?? 'Подробнее'}
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        ) : null}
+
         {/* Decorative line */}
         <div className="w-16 h-px bg-kaleo-terracotta/30 mt-8" />
       </div>

@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { cooperationConfig } from '../config';
-import { Check, Handshake, Mail } from 'lucide-react';
+import { Check, FileText, Handshake } from 'lucide-react';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,7 +12,7 @@ const Cooperation = () => {
   const contentRef = useRef<HTMLDivElement>(null);
   const benefitsRef = useRef<HTMLDivElement>(null);
 
-  const { sectionTitle, sectionSubtitle, description, benefits } = cooperationConfig;
+  const { sectionTitle, sectionSubtitle, description, actsTitle, actsDescription, acts, benefits } = cooperationConfig;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -84,18 +85,29 @@ const Cooperation = () => {
               {description}
             </p>
 
-            <button className="group inline-flex items-center gap-3 px-6 py-3 bg-kaleo-terracotta text-kaleo-cream rounded-full font-body text-sm uppercase tracking-wider hover:bg-kaleo-earth transition-colors duration-300">
-              <Mail className="w-4 h-4" />
-              Связаться с нами
-              <svg 
-                className="w-4 h-4 transition-transform group-hover:translate-x-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
+            <div className="mb-8 rounded-2xl border border-kaleo-earth/10 bg-kaleo-sand/70 p-5">
+              <h3 className="font-display text-2xl text-kaleo-earth">
+                {actsTitle}
+              </h3>
+              <p className="mt-3 font-body text-sm leading-relaxed text-kaleo-earth/75">
+                {actsDescription}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {acts.map((act) => (
+                  <a
+                    key={act.href}
+                    href={withBase(act.href)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-kaleo-terracotta/40 bg-kaleo-cream px-4 py-2 font-body text-xs uppercase tracking-[0.12em] text-kaleo-earth transition-colors hover:border-kaleo-terracotta hover:bg-kaleo-terracotta/10"
+                  >
+                    <FileText className="h-4 w-4 text-kaleo-terracotta" />
+                    {act.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
           </div>
 
           {/* Right Benefits */}

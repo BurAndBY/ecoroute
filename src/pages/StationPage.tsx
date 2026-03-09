@@ -14,6 +14,24 @@ interface StationTaskItem {
   images: string[];
 }
 
+interface StationMaterial {
+  label: string;
+  href: string;
+}
+
+const stationMaterials: Record<number, StationMaterial> = {
+  1: { label: 'Скачать материалы (Хвойная)', href: '/materials/Хвойная.docx' },
+  2: { label: 'Скачать материалы (Капля)', href: '/materials/Капля.docx' },
+  3: { label: 'Скачать материалы (Пруд)', href: '/materials/Пруд.docx' },
+  4: { label: 'Скачать материалы (Исследовательская)', href: '/materials/Исследовательская.docx' },
+  5: { label: 'Скачать материалы (Молодые дубки)', href: '/materials/дубки.docx' },
+  6: { label: 'Скачать материалы (Березовая аллея)', href: '/materials/березовая.docx' },
+  7: { label: 'Скачать материалы (Кормушка)', href: '/materials/кормушка .docx' },
+  8: { label: 'Скачать материалы (Дендрарий)', href: '/materials/Дендрарий.docx' },
+  9: { label: 'Скачать материалы (Каштановая аллея)', href: '/materials/алея.docx' },
+  10: { label: 'Скачать материалы (Пейзаж)', href: '/materials/Пейзаж.docx' },
+};
+
 const stationOnePlants = [
   {
     id: 1,
@@ -357,6 +375,207 @@ const stationFourExperiments = [
   },
 ];
 
+const stationSixOverview = {
+  text:
+    'Далее выходим на дорожку и двигаемся на задний двор гимназии. По правой стороне расположена березовая аллея. Она формируется на автоморфных супесчаных почвах. Основным видом является береза повислая, иногда встречается примесь березы бородавчатой (Приложение Г). В надпочвенном покрове — бореальные мхи Шребера, местами кукушкин лен можжевельниковый. В травном покрове можно встретить многолетние семейства злаковых: ежа сборная, тимофеевка луговая и щучка дернистая.',
+  images: ['/berezovaya/a1.jpg', '/berezovaya/a2.jpg'],
+  figure: 'Рисунок 3.7 - Березовая аллея',
+};
+
+const stationSixOakOverview = {
+  title: 'Характерные виды Станции № 5 «Молодые дубки»',
+  species:
+    'Дуб обыкновенный (дуб черешчатый) — Quercus robur L. Семейство буковые — Fagaceae.',
+  history:
+    'Родовое латинское название произошло от двух кельтских слов: guer — красный и cyer — дерево, что дословно значит «красное» или «красивое» дерево. Видовое название robur означает «твёрдое дерево». Ни к одному дереву человек не уделял столько внимания, любви и уважения, как к дубу. Многие народы считали его священным деревом и приписывали растению чудесные свойства. В Греции за выдающиеся подвиги воинов награждали дубовыми ветками. В Древнем Риме дуб посвящали верховному богу Юпитеру, а жёлуди называли божественными плодами. Людей поражала долговечность дерева, а питательность семян сравнивали с хлебными злаками. Желудевая мука и в настоящее время применяется при выпечке кондитерских изделий. В России дубовую кору использовали при выделке кожи.',
+  biologyTitle: 'Биологические особенности дуба обыкновенного',
+  biology:
+    'Дуб обыкновенный является деревом высотой до 40 м. Кора молодых деревьев гладкая, после 30 лет жизни дерева начинает растрескиваться. У старых деревьев кора толстая, глубоко растрескивающаяся, буровато-серая. Листья с округлыми лопастями и короткими черешками. Цветки мелкие, зеленоватые, с малозаметным околоцветником. Зацветают дубы начиная с 30-летнего возраста одновременно с распусканием листьев. Плоды — жёлуди буроватого цвета, блестящие, раскалывающиеся на две части после очистки от твёрдой кожуры. Семенные годы (годы урожая желудей) бывают раз в 5-6 лет. Дуб развивает крупную корневую систему.',
+  image: '/dubki/image1.jpeg',
+  figure: 'Рисунок Г.1 — Дуб обыкновенный',
+};
+
+const stationSixAppendixD = {
+  heading: 'ПРИЛОЖЕНИЕ Д',
+  title: 'Характерные виды станции № 6 «Березовая аллея»',
+  itemTitle: '1. Береза повислая (Betula) (рис. Д.1)',
+  details: [
+    'Семейство: Березовые',
+    'Тип растения: древесное',
+    'Отношение к свету: светолюбивое',
+    'Отношение к влаге: предпочитает умеренное увлажнение',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Сроки цветения: весна (апрель-май)',
+    'Высота: высокое дерево (более 3 м)',
+    'Ценность в культуре: декоративнолиственное',
+  ],
+  figure: 'Рисунок Д.1 — Береза повислая',
+  text:
+    'Береза. Деревья, кустарники и кустарнички со сквозистой кроной, дающей разреженную тень, и, как правило, с красивой корой ствола. Листья черешчатые, от круглых до ланцетных, цельные, зубчатые. Мужские сережки во время цветения поникают, женские стоят вертикально. Плоды — двукрылые семянки. Многие виды подходят для использования в декоративном садоводстве, применяются при создании аллей, древесно-кустарниковых групп, в одиночной посадке.',
+  text2:
+    'Береза бородавчатая, или береза повислая, береза плакучая, береза обыкновенная (Betula verrucosa, Betula pendula) — листопадное дерево до 20 м высотой с ажурной неправильной кроной, имеет широкий евразийский ареал. Ветви на концах поникающие, кора белая, в нижней части ствола черная, трещиноватая. Листья ромбические, голые, до 7 см длиной.',
+  image: '/berezovaya/a3.jpg',
+};
+
+const stationSevenOverview = {
+  intro:
+    'На данной станции проводятся различные акции (Приложение Д):',
+  actions: [
+    '«Поддержим птиц зимой!»',
+    '«Мастер-класс по изготовлению кормушек из твёрдых бытовых отходов»',
+    '«Голоса птиц» и т.д.',
+  ],
+  text:
+    'Кормушка для птиц — это довольно простое сооружение. Главное, чтобы было, куда положить корм и как защитить его от ветра, дождя и снега. Поэтому конструкции кормушек могут быть самыми разнообразными и выполнены из любого подручного материала.',
+  images: ['/kormushka/a1.jpg', '/kormushka/a2.jpg', '/kormushka/a3.jpg'],
+};
+
+const stationEightOverview = {
+  intro: 'По левой стороне, напротив березовой аллеи, располагается дендрарий.',
+  title: 'Характерные виды',
+  species: [
+    'Туя западная',
+    'Ель голубая',
+    'Можжевельник колоновидный',
+    'Можжевельник казацкий',
+    'Очиток',
+    'Хосты гибридные',
+    'Ирисы',
+    'Кизильник',
+    'Бирючина',
+    'Дерен белый и красный',
+  ],
+};
+
+const stationNineOverview = {
+  intro:
+    'Пройдя до конца березовой аллеи, попадаем на каштановую аллею (рис. 3.10). Доминирующим видом является каштан конский. Деревья высажены вдоль дороги и выполняют шумозащитную и пылезащитную функцию. Рядом располагаются кустарники: кизильник, бирючина, дерен, сумах, снежноягодник белый (Приложение Ж).',
+  title: 'Характерные виды станции № 9 «Каштановая аллея»',
+  chestnut: [
+    'Конский каштан (Aesculus) (рис. З.1)',
+    'Семейство: Конскокаштановые',
+    'Тип растения: древесное',
+    'Отношение к свету: теневыносливое, светолюбивое',
+    'Отношение к влаге: влаголюбивое',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Сроки цветения: весна (апрель-май)',
+    'Высота: высокое дерево (более 3 м)',
+    'Ценность в культуре: красивоцветущее, декоративнолиственное',
+  ],
+  chestnutText:
+    'Декоративные листопадные деревья и кустарники с крупными листьями. Цветки в прямостоячих кистях, слегка неправильные. Семена крупные, овальные. Конский каштан обыкновенный (Aesculus hippocastanum) широко распространен в культуре по всему миру, а естественно растет в горных лесах Балкан. Дерево высотой до 30 м, крона широкоокруглая, листья пальчато-сложные. Цветки до 2 см в диаметре, белые с розовым пятном, цветут в конце весны — начале лета.',
+  cotoneaster: [
+    'Кизильник (Cotoneaster) (рис. З.2)',
+    'Семейство: Розовые, Розоцветные',
+    'Тип растения: древесное',
+    'Отношение к свету: теневыносливое, светолюбивое',
+    'Отношение к влаге: предпочитает умеренное увлажнение, засухоустойчивое',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Сроки цветения: весна-лето (май-июнь), лето (июль-август)',
+    'Высота: среднерослое дерево или кустарник (1-2 м), низкорослый кустарник (до 1 м)',
+    'Ценность в культуре: красивоцветущее, декоративнолиственное, съедобное',
+  ],
+  cotoneasterText:
+    'Кизильник блестящий (Cotoneaster lucidus, или acutifolius) — самый распространенный в культуре вид кизильника. Листопадный кустарник высотой до 2 м, листья эллиптические или яйцевидные, заостренные, блестящие, темно-зеленые, осенью пурпуровые. Цветки розовые, собраны в щитковидные соцветия. Плоды черные, блестящие. Вид зимостоек, неприхотлив к почвам, теневынослив.',
+  ligustrumText:
+    'Бирючина (Ligustrum) — небольшие вечнозеленые или листопадные деревья и кустарники с супротивными, цельнокрайними, кожистыми листьями. Цветки мелкие, собраны в верхушечные метельчатые соцветия. Плоды — черные малосемянные ягоды, созревают осенью. Бирючина обыкновенная (Ligustrum vulgare) — кустарник до 2 м высотой, в средней полосе обычно листопадный. Соцветие — метелка с мелкими кремово-белыми душистыми цветками. Плоды блестящие, черные, несъедобные. Хорошо поддается стрижке.',
+  barberryText:
+    'Барбарис обыкновенный (Berberis vulgaris) (рис. З.4) — листопадный кустарник до 2,5-3 м высотой. Цветки мелкие, желтые, с приятным медовым ароматом, собраны в поникающие кисти до 6 см. Цветет в мае 2-3 недели. Плоды декоративны и съедобны.',
+  thunbergText:
+    'Барбарис Тунберга (Berberis thunbergii) (рис. З.5) — кустарник до 2,5 м с дугообразными ребристыми ветвями. Листья мелкие, осенью ярко-красные. Цветки желтые, ягоды кораллово-красные, блестящие. Цветет в мае, плодоносит в сентябре-октябре.',
+  images: {
+    z1: ['/aleya/a1.jpg', '/aleya/a2.jpg'],
+    z2: ['/aleya/a3.jpg'],
+    z3: ['/aleya/a4.jpg'],
+    z4: ['/aleya/a5.jpg'],
+    z5: ['/aleya/a6.jpg'],
+  },
+};
+
+const stationTenAppendixI = {
+  heading: 'ПРИЛОЖЕНИЕ И',
+  title: 'Характерные виды станции № 10 «Клумба Пейзаж»',
+  sedge: [
+    'Осока (Carex) (рис. И.1)',
+    'Семейство: Осоковые',
+    'Тип растения: многолетник',
+    'Отношение к свету: тенелюбивое, теневыносливое, светолюбивое',
+    'Отношение к влаге: влаголюбивое, предпочитает умеренное увлажнение',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Сроки цветения: весна-лето (май-июнь)',
+    'Высота: низкое (10-50 см)',
+    'Ценность в культуре: декоративнолиственное',
+  ],
+  sedgeText:
+    'Многолетние корневищные травы с плотными узкими, как у злаков, листьями и тонкими колосками. Осока ржавопятнистая (Carex siderosticta): родина — леса Дальнего Востока. Длиннокорневищный многолетник высотой до 30 см. Листья широкие, овальные. Цветет в мае-июне. Образует плотный медленно разрастающийся покров.',
+  fern: [
+    'Орляк — папоротник (Pteridium) (рис. И.2)',
+    'Семейство: Гиполеписовые, Орляковые',
+    'Тип растения: многолетник',
+    'Отношение к свету: теневыносливое',
+    'Отношение к влаге: предпочитает умеренное увлажнение',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Высота: высокое (выше 100 см), среднее (50-100 см)',
+    'Ценность в культуре: декоративнолиственное',
+  ],
+  fernText:
+    'Орляк — папоротник высотой до 150 см. Название отражает форму листа (греческое слово pteris — крыло и латинское aquila — орел).',
+  brunnera: [
+    'Бруннера, незабудочник (Brunnera) (рис. И.3)',
+    'Семейство: Бурачниковые',
+    'Тип растения: многолетник',
+    'Отношение к свету: теневыносливое, светолюбивое',
+    'Отношение к влаге: влаголюбивое, предпочитает умеренное увлажнение',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Сроки цветения: весна (апрель-май)',
+    'Высота: низкое (10-50 см)',
+    'Ценность в культуре: красивоцветущее, декоративнолиственное',
+  ],
+  brunneraText:
+    'Корневищные травянистые многолетники с крупными цельными листьями и незабудковидными цветками, собранными в метельчатые или щитковидные соцветия.',
+  hosta: [
+    'Хоста, функия (Hosta) (рис. И.4)',
+    'Семейство: Хостовые',
+    'Тип растения: многолетник',
+    'Отношение к свету: тенелюбивое, теневыносливое',
+    'Отношение к влаге: влаголюбивое, предпочитает умеренное увлажнение',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Сроки цветения: лето (июль-август)',
+    'Высота: низкое (10-50 см)',
+    'Ценность в культуре: красивоцветущее, декоративнолиственное',
+  ],
+  hostaText:
+    'Декоративнолиственные многолетники с крупными простыми плотными эллиптическими листьями на черешках, окрашенными в разные тона. Листья — главное достоинство хосты — собраны в плотный куст высотой до 90 см. Цветки хосты воронковидные, собраны в кистевидное, часто однобокое соцветие и венчают высокий (до 120 см) цветонос. Хоста гибридная (Hosta hybridum): сорта различаются по декоративным признакам и используются в цветниках и садовых композициях.',
+  lily: [
+    'Ландыш (Convallaria) (рис. И.5)',
+    'Семейство: Ландышевые',
+    'Тип растения: многолетник',
+    'Отношение к свету: тенелюбивое, теневыносливое',
+    'Отношение к влаге: предпочитает умеренное увлажнение',
+    'Зимовка: зимостойкое',
+    'Почва: предпочитает садовые почвы',
+    'Сроки цветения: весна (апрель-май)',
+    'Высота: низкое (10-50 см)',
+    'Ценность в культуре: красивоцветущее, ароматное',
+  ],
+  lilyText:
+    'Ландыш майский (Convallaria majalis) — многолетнее растение со шнуровидным, ветвистым ползучим корневищем. Образует куртины высотой около 30 см. Листья широколанцетные. Цветки колокольчатые, поникающие, белые или розоватые, душистые, собраны в одностороннюю кисть. Цветет с конца апреля до начала лета.',
+  images: {
+    i1: '/peyzazh_extra/a1.jpg',
+    i2: '/peyzazh_extra/a2.jpg',
+    i3: '/peyzazh_extra/a3.jpg',
+    i4: '/peyzazh_extra/a4.jpg',
+    i5: '/peyzazh_extra/a5.jpg',
+  },
+};
+
 const stationAdditionalTasks: Record<number, StationTaskItem[]> = {
   5: [
     {
@@ -597,6 +816,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
 
   const previousStation = stationIndex > 0 ? stations[stationIndex - 1] : null;
   const nextStation = stationIndex < stations.length - 1 ? stations[stationIndex + 1] : null;
+  const stationMaterial = stationMaterials[station.id];
 
   return (
     <main className="min-h-screen bg-kaleo-sand text-kaleo-earth">
@@ -635,6 +855,16 @@ const StationPage = ({ stationId }: StationPageProps) => {
             <p className="font-body text-lg leading-relaxed text-kaleo-earth/85 md:text-xl">
               {station.description}
             </p>
+            {stationMaterial ? (
+              <a
+                href={withBase(stationMaterial.href)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-kaleo-terracotta/40 bg-kaleo-sand/70 px-5 py-2 font-body text-xs uppercase tracking-[0.14em] text-kaleo-earth transition-colors hover:border-kaleo-terracotta hover:bg-kaleo-terracotta/10"
+              >
+                {stationMaterial.label}
+              </a>
+            ) : null}
           </article>
 
           {station.id === 1 ? (
@@ -955,6 +1185,311 @@ const StationPage = ({ stationId }: StationPageProps) => {
             </>
           ) : null}
 
+          {station.id === 5 ? (
+            <section className="mt-8">
+              <article className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <h3 className="font-display text-3xl text-kaleo-earth">{stationSixOakOverview.title}</h3>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixOakOverview.species}
+                </p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixOakOverview.history}
+                </p>
+                <h4 className="mt-5 font-display text-2xl text-kaleo-earth">
+                  {stationSixOakOverview.biologyTitle}
+                </h4>
+                <p className="mt-3 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixOakOverview.biology}
+                </p>
+                <figure className="mt-5 overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60">
+                  <img
+                    src={withBase(stationSixOakOverview.image)}
+                    alt="Дуб обыкновенный"
+                    className="h-72 w-full object-cover md:h-96"
+                  />
+                  <figcaption className="px-4 py-3 font-body text-sm text-kaleo-earth/70">
+                    {stationSixOakOverview.figure}
+                  </figcaption>
+                </figure>
+              </article>
+            </section>
+          ) : null}
+
+          {station.id === 6 ? (
+            <section className="mt-8">
+              <article className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <p className="font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixOverview.text}
+                </p>
+                <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {stationSixOverview.images.map((image) => (
+                    <figure
+                      key={image}
+                      className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60"
+                    >
+                      <img
+                        src={withBase(image)}
+                        alt="Березовая аллея"
+                        className="h-72 w-full object-cover md:h-80"
+                      />
+                    </figure>
+                  ))}
+                </div>
+                <figcaption className="mt-4 font-body text-sm text-kaleo-earth/70">
+                  {stationSixOverview.figure} (1, 2)
+                </figcaption>
+              </article>
+
+              <article className="mt-6 rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <p className="font-body text-sm uppercase tracking-[0.12em] text-kaleo-terracotta">
+                  {stationSixAppendixD.heading}
+                </p>
+                <h3 className="mt-2 font-display text-3xl text-kaleo-earth">{stationSixAppendixD.title}</h3>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixAppendixD.itemTitle}
+                </p>
+                <ul className="mt-4 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixAppendixD.details.map((detail) => (
+                    <li key={detail}>{detail}</li>
+                  ))}
+                </ul>
+                <figure className="mt-5 overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60">
+                  <img
+                    src={withBase(stationSixAppendixD.image)}
+                    alt="Береза повислая"
+                    className="h-72 w-full object-cover md:h-96"
+                  />
+                  <figcaption className="px-4 py-3 font-body text-sm text-kaleo-earth/70">
+                    {stationSixAppendixD.figure}
+                  </figcaption>
+                </figure>
+                <p className="mt-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixAppendixD.text}
+                </p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSixAppendixD.text2}
+                </p>
+              </article>
+            </section>
+          ) : null}
+
+          {station.id === 7 ? (
+            <section className="mt-8">
+              <article className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <p className="font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSevenOverview.intro}
+                </p>
+                <ul className="mt-4 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSevenOverview.actions.map((action) => (
+                    <li key={action}>{action}</li>
+                  ))}
+                </ul>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationSevenOverview.text}
+                </p>
+                <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
+                  {stationSevenOverview.images.map((image, index) => (
+                    <figure
+                      key={image}
+                      className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60"
+                    >
+                      <img
+                        src={withBase(image)}
+                        alt={`Кормушка для птиц ${index + 1}`}
+                        className="h-56 w-full object-cover"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </article>
+            </section>
+          ) : null}
+
+          {station.id === 8 ? (
+            <section className="mt-8">
+              <article className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <p className="font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationEightOverview.intro}
+                </p>
+                <p className="mt-4 font-body text-base font-semibold text-kaleo-earth/90">
+                  {stationEightOverview.title}:
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationEightOverview.species.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            </section>
+          ) : null}
+
+          {station.id === 9 ? (
+            <section className="mt-8 space-y-6">
+              <article className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <p className="font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.intro}
+                </p>
+              </article>
+
+              <article className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <h3 className="font-display text-3xl text-kaleo-earth">{stationNineOverview.title}</h3>
+
+                <ul className="mt-4 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.chestnut.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {stationNineOverview.images.z1.map((image) => (
+                    <img
+                      key={image}
+                      src={withBase(image)}
+                      alt="Конский каштан"
+                      className="h-64 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                    />
+                  ))}
+                </div>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.1 — Конский каштан</p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.chestnutText}
+                </p>
+
+                <ul className="mt-6 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.cotoneaster.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <img
+                  src={withBase(stationNineOverview.images.z2[0])}
+                  alt="Кизильник блестящий"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.2 — Кизильник блестящий</p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.cotoneasterText}
+                </p>
+
+                <p className="mt-6 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.ligustrumText}
+                </p>
+                <img
+                  src={withBase(stationNineOverview.images.z3[0])}
+                  alt="Бирючина обыкновенная"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.3 — Бирючина обыкновенная</p>
+
+                <p className="mt-6 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.barberryText}
+                </p>
+                <img
+                  src={withBase(stationNineOverview.images.z4[0])}
+                  alt="Барбарис обыкновенный"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.4 — Барбарис обыкновенный</p>
+
+                <p className="mt-6 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationNineOverview.thunbergText}
+                </p>
+                <img
+                  src={withBase(stationNineOverview.images.z5[0])}
+                  alt="Барбарис Тунберга"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">
+                  Рисунок З.5 — Барбарис Тунберга, красно-пурпурная форма Atropurpurea
+                </p>
+              </article>
+            </section>
+          ) : null}
+
+          {station.id === 10 ? (
+            <section className="mt-8">
+              <article className="rounded-2xl bg-kaleo-cream p-6 shadow-soft md:p-8">
+                <p className="font-body text-sm uppercase tracking-[0.12em] text-kaleo-terracotta">
+                  {stationTenAppendixI.heading}
+                </p>
+                <h3 className="mt-2 font-display text-3xl text-kaleo-earth">{stationTenAppendixI.title}</h3>
+
+                <ul className="mt-4 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.sedge.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <img
+                  src={withBase(stationTenAppendixI.images.i1)}
+                  alt="Осока ржавопятнистая"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.1 — Осока ржавопятнистая</p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.sedgeText}
+                </p>
+
+                <ul className="mt-6 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.fern.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <img
+                  src={withBase(stationTenAppendixI.images.i2)}
+                  alt="Орляк обыкновенный"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.2 — Орляк обыкновенный</p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.fernText}
+                </p>
+
+                <ul className="mt-6 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.brunnera.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <img
+                  src={withBase(stationTenAppendixI.images.i3)}
+                  alt="Бруннера крупнолистная"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.3 — Бруннера крупнолистная</p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.brunneraText}
+                </p>
+
+                <ul className="mt-6 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.hosta.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <img
+                  src={withBase(stationTenAppendixI.images.i4)}
+                  alt="Хоста гибридная"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.4 — Хоста гибридная</p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.hostaText}
+                </p>
+
+                <ul className="mt-6 list-disc space-y-2 pl-5 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.lily.map((line) => (
+                    <li key={line}>{line}</li>
+                  ))}
+                </ul>
+                <img
+                  src={withBase(stationTenAppendixI.images.i5)}
+                  alt="Ландыш майский"
+                  className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
+                />
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.5 — Ландыш майский</p>
+                <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
+                  {stationTenAppendixI.lilyText}
+                </p>
+              </article>
+            </section>
+          ) : null}
+
           {stationAdditionalTasks[station.id] ? (
             <section className="mt-8 space-y-6">
               {stationAdditionalTasks[station.id].map((task) => (
@@ -1042,4 +1577,3 @@ const StationPage = ({ stationId }: StationPageProps) => {
 };
 
 export default StationPage;
-

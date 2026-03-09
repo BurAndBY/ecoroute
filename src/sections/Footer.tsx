@@ -1,69 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Mail, Phone, MapPin, ArrowUpRight, Instagram, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 import { footerConfig } from '../config';
 import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
-
-// Magnetic Button Component
-const MagneticButton = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!buttonRef.current) return;
-
-    const rect = buttonRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-
-    gsap.to(buttonRef.current, {
-      x: x * 0.3,
-      y: y * 0.3,
-      duration: 0.3,
-      ease: 'power2.out',
-    });
-  };
-
-  const handleMouseLeave = () => {
-    if (!buttonRef.current) return;
-    setIsHovered(false);
-    gsap.to(buttonRef.current, {
-      x: 0,
-      y: 0,
-      duration: 0.5,
-      ease: 'elastic.out(1, 0.3)',
-    });
-  };
-
-  return (
-    <button
-      ref={buttonRef}
-      className={className}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      style={{ willChange: 'transform' }}
-    >
-      <span className={`relative z-10 transition-colors duration-300 ${isHovered ? 'text-kaleo-cream' : ''}`}>
-        {children}
-      </span>
-      <span
-        className={`absolute inset-0 bg-kaleo-terracotta rounded-full transition-transform duration-300 ${
-          isHovered ? 'scale-100' : 'scale-0'
-        }`}
-      />
-    </button>
-  );
-};
 
 const iconMap: Record<string, typeof Instagram> = {
   instagram: Instagram,
@@ -177,22 +119,14 @@ const Footer = () => {
               <p className="font-body text-sm text-kaleo-cream/60 mt-6 max-w-md leading-relaxed">
                 {footerConfig.description}
               </p>
-              {footerConfig.ctaText && (
-                <MagneticButton className="relative mt-8 px-8 py-4 border border-kaleo-cream/30 rounded-full font-body text-sm uppercase tracking-wider overflow-hidden transition-colors hover:border-kaleo-terracotta">
-                  <span className="flex items-center gap-2">
-                    {footerConfig.ctaText}
-                    <ArrowUpRight className="w-4 h-4" />
-                  </span>
-                </MagneticButton>
-              )}
             </div>
 
             {/* Right Column - Contact Grid */}
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                 {/* Contact */}
                 {footerConfig.contact.length > 0 && (
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="font-body text-xs uppercase tracking-[0.15em] text-kaleo-terracotta mb-4">
                       Contact
                     </h4>
@@ -201,10 +135,14 @@ const Footer = () => {
                         <li key={index}>
                           <a
                             href={item.href}
-                            className="font-body text-sm text-kaleo-cream/70 hover:text-kaleo-cream transition-colors flex items-center gap-2"
+                            className="font-body text-sm text-kaleo-cream/70 hover:text-kaleo-cream transition-colors flex items-start gap-2 min-w-0"
                           >
-                            {item.type === 'email' ? <Mail className="w-4 h-4" /> : <Phone className="w-4 h-4" />}
-                            {item.label}
+                            {item.type === 'email' ? (
+                              <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                            ) : (
+                              <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                            )}
+                            <span className="break-all leading-relaxed">{item.label}</span>
                           </a>
                         </li>
                       ))}
@@ -214,7 +152,7 @@ const Footer = () => {
 
                 {/* Address */}
                 {footerConfig.address.length > 0 && (
-                  <div>
+                  <div className="min-w-0">
                     <h4 className="font-body text-xs uppercase tracking-[0.15em] text-kaleo-terracotta mb-4">
                       {footerConfig.locationLabel}
                     </h4>
