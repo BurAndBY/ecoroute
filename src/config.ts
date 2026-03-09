@@ -24,6 +24,7 @@ export interface NavigationConfig {
 
 export const navigationConfig: NavigationConfig = {
   buttons: [
+    { label: "Новости", href: "/news" },
     { label: "Экскурсии и методические разработки", href: "#excursions" },
     { label: "Разработки", href: "#developments" },
     { label: "Достижения", href: "#achievements" },

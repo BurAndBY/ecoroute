@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { navigationConfig } from '../config';
 import { Menu, X, Leaf } from 'lucide-react';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,11 +31,20 @@ const Navigation = () => {
     };
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const navigate = (href: string) => {
+    if (href.startsWith('#')) {
+      if (window.location.pathname !== withBase('/')) {
+        window.location.href = withBase(`/${href}`);
+      } else {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      window.location.href = withBase(href);
     }
+
     setIsMobileMenuOpen(false);
   };
 
@@ -53,7 +63,7 @@ const Navigation = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a 
-              href="#" 
+              href={withBase('/')}
               className={`flex items-center gap-2 transition-colors duration-300 ${
                 isScrolled ? 'text-kaleo-earth' : 'text-kaleo-cream'
               }`}
@@ -67,7 +77,7 @@ const Navigation = () => {
               {buttons.map((button, index) => (
                 <button
                   key={index}
-                  onClick={() => scrollToSection(button.href)}
+                  onClick={() => navigate(button.href)}
                   className={`px-4 py-2 rounded-full font-body text-sm uppercase tracking-wider transition-all duration-300 ${
                     isScrolled
                       ? 'text-kaleo-earth hover:bg-kaleo-sand'
@@ -116,7 +126,7 @@ const Navigation = () => {
             {buttons.map((button, index) => (
               <button
                 key={index}
-                onClick={() => scrollToSection(button.href)}
+                onClick={() => navigate(button.href)}
                 className="w-full px-4 py-3 text-left font-body text-base text-kaleo-earth hover:bg-kaleo-sand rounded-xl transition-colors duration-300"
               >
                 {button.label}
