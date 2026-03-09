@@ -57,7 +57,7 @@ export interface NarrativeTextConfig {
 export const narrativeTextConfig: NarrativeTextConfig = {
   line1: "Откройте для себя мир природы",
   line2: "10 уникальных станций ждут вас",
-  line3: "Экотропа — это образовательный маршрут, где каждая станция рассказывает свою историю о природе, флоре и фауне. Пройдите путь от хвойного леса до цветочных пейзажей.",
+  line3: "Экотропа — это образовательный маршрут, где каждая станция рассказывает свою историю о природе, флоре и фауне. Пройдите этот путь вместе с нами.",
 };
 
 // Stations Grid Section
@@ -71,12 +71,27 @@ export interface Station {
 export interface StationsGridConfig {
   sectionTitle: string;
   sectionSubtitle: string;
+  passportTitle: string;
+  passportDescription: string;
+  passportItems: { label: string; value: string }[];
   stations: Station[];
 }
 
 export const stationsGridConfig: StationsGridConfig = {
   sectionTitle: "Станции Экотропы",
   sectionSubtitle: "Выберите станцию для изучения",
+  passportTitle: "Паспорт экологической тропы «Войди в природу другом»",
+  passportDescription:
+    "Маршрут объединяет учебные экскурсии, исследования и свободное посещение, сохраняя структуру полноценной полевой площадки прямо на территории гимназии.",
+  passportItems: [
+    { label: "Местонахождение", value: "Минская обл., Минский район, агр. Лесной" },
+    { label: "Тип экологической тропы", value: "Учебная, пешеходная тропа" },
+    { label: "Вид тропы", value: "Экологическая" },
+    { label: "Время прохождения", value: "40 мин - 1 ч" },
+    { label: "Количество станций", value: "10" },
+    { label: "Режим пользования", value: "Учебные экскурсии, исследования, свободное посещение" },
+    { label: "Дата создания", value: "2016 год" },
+  ],
   stations: [
     {
       id: 1,

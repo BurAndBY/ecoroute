@@ -38,7 +38,7 @@ const stationOnePlants = [
     name: 'Лиственница европейская (Larix)',
     image: '/pril/1.jpg',
     imageAlt: 'Лиственница европейская',
-    figure: 'Рисунок Б.1 - Лиственница европейская',
+    figure: 'Лиственница европейская',
     details: [
       'Семейство: Сосновые',
       'Тип растения: древесное',
@@ -56,7 +56,7 @@ const stationOnePlants = [
     name: 'Ель европейская (Picea)',
     image: '/pril/2.jpg',
     imageAlt: 'Ель европейская',
-    figure: 'Рисунок Б.2 - Ель европейская',
+    figure: 'Ель европейская',
     details: [
       'Семейство: Сосновые',
       'Тип растения: древесное',
@@ -74,7 +74,7 @@ const stationOnePlants = [
     name: 'Туя западная (Thuja)',
     image: '/pril/3.jpg',
     imageAlt: 'Туя западная',
-    figure: 'Рисунок Б.3 - Туя западная',
+    figure: 'Туя западная',
     details: [
       'Семейство: Кипарисовые',
       'Тип растения: древесное',
@@ -98,7 +98,7 @@ const stationTwoPlants = [
     name: 'Цинерария (Cineraria)',
     image: '/pril/4.jpg',
     imageAlt: 'Цинерария',
-    figure: 'Рисунок В.1 - Цинерария (4.jpg)',
+    figure: 'Цинерария',
     details: [
       'Семейство: Астровые или Сложноцветные',
       'Тип растения: двулетник или летник',
@@ -117,7 +117,7 @@ const stationTwoPlants = [
     name: 'Примула, первоцвет (Primula)',
     image: '/pril/5.jpg',
     imageAlt: 'Примула весенняя',
-    figure: 'Рисунок В.2 - Примула весенняя (5.jpg)',
+    figure: 'Примула весенняя',
     details: [
       'Семейство: Первоцветные',
       'Тип растения: многолетник',
@@ -138,7 +138,7 @@ const stationTwoPlants = [
     name: 'Петуния (Petunia)',
     image: '/pril/6.jpg',
     imageAlt: 'Петуния мультифлора',
-    figure: 'Рисунок В.3 - Петуния мультифлора (6.jpg)',
+    figure: 'Петуния мультифлора',
     details: [
       'Семейство: Пасленовые',
       'Тип растения: двулетник или летник',
@@ -159,7 +159,7 @@ const stationTwoPlants = [
     name: 'Агератум (Ageratum)',
     image: '/pril/7.jpg',
     imageAlt: 'Агератум Голубая норка',
-    figure: 'Рисунок В.4 - Агератум Голубая норка (7.jpg)',
+    figure: 'Агератум Голубая норка',
     details: [
       'Тип растения: двулетник или летник',
       'Отношение к свету: светолюбивое',
@@ -177,7 +177,7 @@ const stationTwoPlants = [
     name: 'Тагетес прямостоячий, бархатцы прямостоячие (Tagetes erecta)',
     image: '/pril/8.jpg',
     imageAlt: 'Бархатцы прямостоячие',
-    figure: 'Рисунок В.5 - Бархатцы прямостоячие (8.jpg)',
+    figure: 'Бархатцы прямостоячие',
     details: [
       'Тип растения: однолетник',
       'Высота: 70-80 см',
@@ -194,13 +194,13 @@ const stationThreePhotos = [
     id: 1,
     image: '/kuvshinka.jpg',
     imageAlt: 'Пруд Кувшинка',
-    figure: 'Пруд «Кувшинка» (kuvshinka.jpg)',
+    figure: 'Пруд «Кувшинка»',
   },
   {
     id: 2,
     image: '/kuvshinka2.jpg',
     imageAlt: 'Пруд Кувшинка, вид 2',
-    figure: 'Пруд «Кувшинка», второй вид (kuvshinka2.jpg)',
+    figure: 'Пруд «Кувшинка», второй вид',
   },
 ];
 
@@ -379,7 +379,7 @@ const stationSixOverview = {
   text:
     'Далее выходим на дорожку и двигаемся на задний двор гимназии. По правой стороне расположена березовая аллея. Она формируется на автоморфных супесчаных почвах. Основным видом является береза повислая, иногда встречается примесь березы бородавчатой (Приложение Г). В надпочвенном покрове — бореальные мхи Шребера, местами кукушкин лен можжевельниковый. В травном покрове можно встретить многолетние семейства злаковых: ежа сборная, тимофеевка луговая и щучка дернистая.',
   images: ['/berezovaya/a1.jpg', '/berezovaya/a2.jpg'],
-  figure: 'Рисунок 3.7 - Березовая аллея',
+  figure: 'Березовая аллея',
 };
 
 const stationSixOakOverview = {
@@ -392,7 +392,7 @@ const stationSixOakOverview = {
   biology:
     'Дуб обыкновенный является деревом высотой до 40 м. Кора молодых деревьев гладкая, после 30 лет жизни дерева начинает растрескиваться. У старых деревьев кора толстая, глубоко растрескивающаяся, буровато-серая. Листья с округлыми лопастями и короткими черешками. Цветки мелкие, зеленоватые, с малозаметным околоцветником. Зацветают дубы начиная с 30-летнего возраста одновременно с распусканием листьев. Плоды — жёлуди буроватого цвета, блестящие, раскалывающиеся на две части после очистки от твёрдой кожуры. Семенные годы (годы урожая желудей) бывают раз в 5-6 лет. Дуб развивает крупную корневую систему.',
   image: '/dubki/image1.jpeg',
-  figure: 'Рисунок Г.1 — Дуб обыкновенный',
+  figure: 'Дуб обыкновенный',
 };
 
 const stationSixAppendixD = {
@@ -410,7 +410,7 @@ const stationSixAppendixD = {
     'Высота: высокое дерево (более 3 м)',
     'Ценность в культуре: декоративнолиственное',
   ],
-  figure: 'Рисунок Д.1 — Береза повислая',
+  figure: 'Береза повислая',
   text:
     'Береза. Деревья, кустарники и кустарнички со сквозистой кроной, дающей разреженную тень, и, как правило, с красивой корой ствола. Листья черешчатые, от круглых до ланцетных, цельные, зубчатые. Мужские сережки во время цветения поникают, женские стоят вертикально. Плоды — двукрылые семянки. Многие виды подходят для использования в декоративном садоводстве, применяются при создании аллей, древесно-кустарниковых групп, в одиночной посадке.',
   text2:
@@ -1145,7 +1145,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                     ))}
                   </div>
                   <figcaption className="mt-4 font-body text-sm text-kaleo-earth/70">
-                    Рисунок 3.5 - Станция 4. Исследовательская «Найди себя» (9.jpg, 10.jpg)
+                    Станция 4. Исследовательская «Найди себя»
                   </figcaption>
                 </article>
               </section>
@@ -1349,7 +1349,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                     />
                   ))}
                 </div>
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.1 — Конский каштан</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Конский каштан</p>
                 <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationNineOverview.chestnutText}
                 </p>
@@ -1364,7 +1364,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Кизильник блестящий"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.2 — Кизильник блестящий</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Кизильник блестящий</p>
                 <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationNineOverview.cotoneasterText}
                 </p>
@@ -1377,7 +1377,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Бирючина обыкновенная"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.3 — Бирючина обыкновенная</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Бирючина обыкновенная</p>
 
                 <p className="mt-6 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationNineOverview.barberryText}
@@ -1387,7 +1387,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Барбарис обыкновенный"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок З.4 — Барбарис обыкновенный</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Барбарис обыкновенный</p>
 
                 <p className="mt-6 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationNineOverview.thunbergText}
@@ -1398,7 +1398,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
                 <p className="mt-2 font-body text-sm text-kaleo-earth/70">
-                  Рисунок З.5 — Барбарис Тунберга, красно-пурпурная форма Atropurpurea
+                  Барбарис Тунберга, красно-пурпурная форма Atropurpurea
                 </p>
               </article>
             </section>
@@ -1422,7 +1422,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Осока ржавопятнистая"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.1 — Осока ржавопятнистая</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Осока ржавопятнистая</p>
                 <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationTenAppendixI.sedgeText}
                 </p>
@@ -1437,7 +1437,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Орляк обыкновенный"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.2 — Орляк обыкновенный</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Орляк обыкновенный</p>
                 <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationTenAppendixI.fernText}
                 </p>
@@ -1452,7 +1452,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Бруннера крупнолистная"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.3 — Бруннера крупнолистная</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Бруннера крупнолистная</p>
                 <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationTenAppendixI.brunneraText}
                 </p>
@@ -1467,7 +1467,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Хоста гибридная"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.4 — Хоста гибридная</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Хоста гибридная</p>
                 <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationTenAppendixI.hostaText}
                 </p>
@@ -1482,7 +1482,7 @@ const StationPage = ({ stationId }: StationPageProps) => {
                   alt="Ландыш майский"
                   className="mt-5 h-72 w-full rounded-xl border border-kaleo-earth/10 object-cover"
                 />
-                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Рисунок И.5 — Ландыш майский</p>
+                <p className="mt-2 font-body text-sm text-kaleo-earth/70">Ландыш майский</p>
                 <p className="mt-4 font-body text-base leading-relaxed text-kaleo-earth/90">
                   {stationTenAppendixI.lilyText}
                 </p>

@@ -139,7 +139,7 @@ const Hero = () => {
         {/* Subtitle */}
         <p
           ref={subtitleRef}
-          className="font-body text-kaleo-cream/90 text-sm md:text-base uppercase tracking-[0.3em] mt-6"
+          className="mt-10 font-body text-sm uppercase tracking-[0.3em] text-black md:text-base"
           style={{ willChange: 'transform, opacity' }}
         >
           {heroConfig.subtitle}

@@ -14,6 +14,7 @@ const StationsGrid = () => {
   const cardsRef = useRef<(HTMLElement | null)[]>([]);
 
   const stations = stationsGridConfig.stations;
+  const passportItems = stationsGridConfig.passportItems;
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -86,6 +87,39 @@ const StationsGrid = () => {
             {stationsGridConfig.sectionSubtitle}
           </p>
         </div>
+
+        <article className="relative mb-12 overflow-hidden rounded-[2rem] border border-kaleo-earth/10 bg-kaleo-cream shadow-soft md:mb-16">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(186,113,63,0.14),transparent_30%),linear-gradient(135deg,rgba(240,230,210,0.45),transparent_55%)]" />
+          <div className="relative grid gap-8 px-6 py-8 md:px-8 md:py-10 lg:grid-cols-[1.1fr,1.4fr] lg:gap-10">
+            <div>
+              <p className="font-body text-xs uppercase tracking-[0.18em] text-kaleo-terracotta">
+                Паспорт маршрута
+              </p>
+              <h3 className="mt-3 max-w-lg font-display text-3xl text-kaleo-earth md:text-4xl">
+                {stationsGridConfig.passportTitle}
+              </h3>
+              <p className="mt-4 max-w-xl font-body text-sm leading-relaxed text-kaleo-earth/75 md:text-base">
+                {stationsGridConfig.passportDescription}
+              </p>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {passportItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-2xl border border-kaleo-earth/10 bg-kaleo-sand/70 p-4 backdrop-blur-sm"
+                >
+                  <p className="font-body text-[11px] uppercase tracking-[0.14em] text-kaleo-terracotta/90">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 font-body text-sm leading-relaxed text-kaleo-earth md:text-base">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </article>
 
         {/* Stations Grid */}
         <div
