@@ -10,7 +10,6 @@ import Navigation from './sections/Navigation';
 import Hero from './sections/Hero';
 import NarrativeText from './sections/NarrativeText';
 import StationsGrid from './sections/StationsGrid';
-import BreathSection from './sections/BreathSection';
 import ZigZagGrid from './sections/ZigZagGrid';
 import Achievements from './sections/Achievements';
 import Cooperation from './sections/Cooperation';
@@ -99,11 +98,11 @@ function App() {
       {/* Stations Grid - All 10 Stations */}
       <StationsGrid />
 
-      {/* BREATH Video Mask Section */}
-      <BreathSection />
+      {/* Chatbot Section */}
+      <ZigZagGrid itemIds={['chatbot']} hideHeader />
 
-      {/* Zig-Zag Grid Section - Methodology, Developments, Excursions */}
-      <ZigZagGrid />
+      {/* Resources Section - Methodology and Excursions */}
+      <ZigZagGrid itemIds={['methodology', 'excursions']} />
 
       {/* Achievements Section */}
       <Achievements />

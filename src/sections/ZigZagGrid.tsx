@@ -24,7 +24,7 @@ const GridItem = ({
   const useContainedImage = item.id === 'chatbot' || item.id === 'methodology';
   const hideImageOnMobile = item.id === 'chatbot';
   const hideImageCompletely = item.id === 'methodology';
-  const showInlineButton = showSingleLink && !hideImageCompletely && !hideImageOnMobile;
+  const showInlineButton = showSingleLink && !hideImageCompletely;
   const resolvedItemHref = item.href
     ? itemHrefIsExternal
       ? item.href
@@ -137,7 +137,9 @@ const GridItem = ({
         ref={textRef}
         className={`${
           item.reverse ? 'lg:order-1 lg:pr-8' : 'lg:order-2 lg:pl-8'
-        } ${hideImageCompletely ? 'lg:col-span-2 lg:px-12' : ''}`}
+        } ${hideImageCompletely ? 'lg:col-span-2 lg:px-12' : ''} ${
+          item.id === 'chatbot' ? 'lg:flex lg:h-full lg:flex-col lg:justify-center' : ''
+        }`}
       >
         <span className="font-body text-xs uppercase tracking-[0.2em] text-kaleo-terracotta">
           {item.subtitle}
@@ -200,7 +202,7 @@ const GridItem = ({
           </div>
         ) : null}
 
-        {(hideImageCompletely || hideImageOnMobile) && showSingleLink ? (
+        {(hideImageCompletely || (hideImageOnMobile && item.id !== 'chatbot')) && showSingleLink ? (
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={resolvedItemHref}
@@ -223,13 +225,21 @@ const GridItem = ({
   );
 };
 
-const ZigZagGrid = () => {
+interface ZigZagGridProps {
+  itemIds?: string[];
+  hideHeader?: boolean;
+}
+
+const ZigZagGrid = ({ itemIds, hideHeader = false }: ZigZagGridProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const items = itemIds
+    ? zigZagGridConfig.items.filter((item) => itemIds.includes(item.id))
+    : zigZagGridConfig.items;
 
   useEffect(() => {
     const header = headerRef.current;
-    if (!header) return;
+    if (!header || hideHeader) return;
 
     gsap.set(header.children, { opacity: 0, y: 30 });
 
@@ -253,7 +263,7 @@ const ZigZagGrid = () => {
     };
   }, []);
 
-  if (!zigZagGridConfig.sectionTitle && zigZagGridConfig.items.length === 0) return null;
+  if (!zigZagGridConfig.sectionTitle && items.length === 0) return null;
 
   return (
     <section
@@ -262,17 +272,19 @@ const ZigZagGrid = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12">
         {/* Section Header */}
-        <div ref={headerRef} className="text-center mb-20 md:mb-28">
-          <span className="font-body text-xs uppercase tracking-[0.2em] text-kaleo-terracotta">
-            {zigZagGridConfig.sectionLabel}
-          </span>
-          <h2 className="font-display text-headline text-kaleo-earth mt-4">
-            {zigZagGridConfig.sectionTitle}
-          </h2>
-        </div>
+        {!hideHeader ? (
+          <div ref={headerRef} className="text-center mb-20 md:mb-28">
+            <span className="font-body text-xs uppercase tracking-[0.2em] text-kaleo-terracotta">
+              {zigZagGridConfig.sectionLabel}
+            </span>
+            <h2 className="font-display text-headline text-kaleo-earth mt-4">
+              {zigZagGridConfig.sectionTitle}
+            </h2>
+          </div>
+        ) : null}
 
         {/* Grid Items */}
-        {zigZagGridConfig.items.map((item, index) => (
+        {items.map((item, index) => (
           <div key={item.id} id={item.id}>
             <GridItem item={item} index={index} />
           </div>

@@ -25,6 +25,7 @@ export interface NavigationConfig {
 export const navigationConfig: NavigationConfig = {
   buttons: [
     { label: "Новости", href: "/news" },
+    { label: "Чат-бот", href: "#chatbot" },
     { label: "Экскурсии и методические разработки", href: "#excursions" },
     { label: "Методичка", href: "#methodology" },
     { label: "Достижения", href: "#achievements" },
@@ -211,8 +212,6 @@ export const zigZagGridConfig: ZigZagGridConfig = {
       image: "/station-4-naydi-sebya.jpg",
       imageAlt: "Методические материалы экологической тропы",
       reverse: true,
-      href: "/CamScanner 10.03.2026 13.49.pdf",
-      ctaLabel: "Открыть методичку",
     },
     {
       id: "excursions",
