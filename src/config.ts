@@ -26,7 +26,7 @@ export const navigationConfig: NavigationConfig = {
   buttons: [
     { label: "Новости", href: "/news" },
     { label: "Экскурсии и методические разработки", href: "#excursions" },
-    { label: "Разработки", href: "#developments" },
+    { label: "Методичка", href: "#methodology" },
     { label: "Достижения", href: "#achievements" },
     { label: "Сотрудничество", href: "#cooperation" },
   ],
@@ -170,6 +170,7 @@ export interface ZigZagGridItem {
   title: string;
   subtitle: string;
   description: string;
+  announcement?: string;
   detailLabel?: string;
   detailTitle?: string;
   bulletPoints?: string[];
@@ -192,28 +193,41 @@ export const zigZagGridConfig: ZigZagGridConfig = {
   sectionTitle: "Ресурсы для учителей и учащихся",
   items: [
     {
-      id: "developments",
-      title: "Разработки уроков",
-      subtitle: "Готовые материалы",
-      description: "Коллекция разработанных уроков и практических занятий по биологии, экологии и природоведению для разных возрастных групп.",
+      id: "methodology",
+      title: "Методичка",
+      subtitle: "Методические материалы",
+      description:
+        "Методичка собрана как практический ориентир по созданию экологических троп: от первых идей и проектирования маршрута до оформления остановок, правил поведения и примеров внедрения в образовательный процесс.",
+      announcement: "Презентация методички состоится 11 апреля!",
+      detailLabel: "Издание",
+      detailTitle:
+        "«Сохраняя природу: Методические рекомендации по разработке экологических троп — от реальных маршрутов до виртуальных путешествий».",
+      bulletPoints: [
+        "Общие принципы создания экологической тропы",
+        "Этапы создания и оформления маршрута",
+        "Правила поведения на экологической тропе",
+        "Практический пример экотропы на базе гимназии",
+      ],
       image: "/station-4-naydi-sebya.jpg",
-      imageAlt: "Разработки уроков",
+      imageAlt: "Методические материалы экологической тропы",
       reverse: true,
+      href: "/CamScanner 10.03.2026 13.49.pdf",
+      ctaLabel: "Открыть методичку",
     },
     {
       id: "excursions",
       title: "Экскурсии и методические разработки",
       subtitle: "Для педагогов и учащихся",
       description:
-        "В этом разделе собраны разработанные уроки-экскурсии, методические рекомендации и разнообразные мероприятия, которые помогают углубить знания, расширить кругозор учащихся и развивать практические навыки в живой образовательной среде.",
-      detailLabel: "Методичка",
+        "В этом разделе собраны уроки-экскурсии для разных сезонов. Весенняя и зимняя программы помогают наблюдать природные изменения на маршруте, организовывать полевые задания и развивать практические навыки в живой образовательной среде.",
+      detailLabel: "Экскурсионные программы",
       detailTitle:
-        "Методичка «Сохраняя природу: Методические рекомендации по разработке экологических троп — от реальных маршрутов до виртуальных путешествий»",
+        "Сезонные экскурсии по экотропе для наблюдений, исследований и учебной практики.",
       bulletPoints: [
-        "Общие принципы создания экологической тропы",
-        "Этапы создания и оформления экологической тропы",
-        "Правила поведения на экологической тропе",
-        "Пример экологической тропы",
+        "Экскурсия «Живые организмы весной в различных экосистемах»",
+        "Экскурсия «Живые организмы зимой»",
+        "Маршрутные задания для учащихся",
+        "Материалы для сезонных наблюдений",
       ],
       image: "/station-6-bereza.jpg",
       imageAlt: "Экскурсии и методические разработки",
@@ -221,6 +235,8 @@ export const zigZagGridConfig: ZigZagGridConfig = {
       links: [
         { label: "Экскурсия весной", href: "/excursions/spring-organisms" },
         { label: "Экскурсия зимой", href: "/excursions/winter-organisms" },
+        { label: "Биологическая лаборатория", href: "/excursions/biolab" },
+        { label: "Деловая игра", href: "/excursions/business-game" },
       ],
     },
     {
@@ -343,15 +359,15 @@ export const footerConfig: FooterConfig = {
   contact: [
     {
       type: "email",
-      label: "mackarova.zhanna2018@yandex.ru",
-      value: "mackarova.zhanna2018@yandex.ru",
-      href: "mailto:mackarova.zhanna2018@yandex.ru",
+      label: "www.arishe4ka@mail.ru",
+      value: "www.arishe4ka@mail.ru",
+      href: "mailto:www.arishe4ka@mail.ru",
     },
     {
       type: "phone",
-      label: "+7 (XXX) XXX-XX-XX",
-      value: "+7XXXXXXXXXX",
-      href: "tel:+7XXXXXXXXXX",
+      label: "+375 44 765-27-26",
+      value: "+375447652726",
+      href: "tel:+375447652726",
     },
   ],
   locationLabel: "Адрес",
@@ -379,6 +395,8 @@ export interface AchievementsConfig {
   sectionTitle: string;
   sectionSubtitle: string;
   achievements: Achievement[];
+  featuredDocumentsTitle: string;
+  featuredDocuments: { label: string; href: string }[];
   publicationsTitle: string;
   publications: string[];
   masterClassesTitle: string;
@@ -393,6 +411,10 @@ export const achievementsConfig: AchievementsConfig = {
     { number: "500+", label: "Учащихся в год" },
     { number: "50+", label: "Разработанных уроков" },
     { number: "10", label: "Лет работы" },
+  ],
+  featuredDocumentsTitle: "Награды и подтверждения",
+  featuredDocuments: [
+    { label: "Диплом", href: "/CamScanner 10.03.2026 13.49.pdf" },
   ],
   publicationsTitle: "Публикации",
   publications: [

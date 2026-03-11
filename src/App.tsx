@@ -19,6 +19,8 @@ import StationPage from './pages/StationPage';
 import ExcursionSpringPage from './pages/ExcursionSpringPage';
 import ExcursionWinterPage from './pages/ExcursionWinterPage';
 import NewsPage from './pages/NewsPage';
+import BioLabPage from './pages/BioLabPage';
+import BusinessGamePage from './pages/BusinessGamePage';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,6 +56,8 @@ function App() {
   const stationPathMatch = relativePathname.match(/^\/stations\/(\d+)\/?$/);
   const isExcursionSpringPage = /^\/excursions\/spring-organisms\/?$/.test(relativePathname);
   const isExcursionWinterPage = /^\/excursions\/winter-organisms\/?$/.test(relativePathname);
+  const isBioLabPage = /^\/excursions\/biolab\/?$/.test(relativePathname);
+  const isBusinessGamePage = /^\/excursions\/business-game\/?$/.test(relativePathname);
   const isNewsPage = /^\/news\/?$/.test(relativePathname);
   const stationId = stationPathMatch ? Number(stationPathMatch[1]) : null;
 
@@ -67,6 +71,14 @@ function App() {
 
   if (isExcursionWinterPage) {
     return <ExcursionWinterPage />;
+  }
+
+  if (isBioLabPage) {
+    return <BioLabPage />;
+  }
+
+  if (isBusinessGamePage) {
+    return <BusinessGamePage />;
   }
 
   if (isNewsPage) {

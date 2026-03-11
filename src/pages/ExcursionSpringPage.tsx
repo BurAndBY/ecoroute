@@ -1,5 +1,10 @@
-import { ArrowLeft, Leaf } from 'lucide-react';
+import { ArrowDownToLine, ArrowLeft, Leaf } from 'lucide-react';
 import { withBase } from '../lib/paths';
+
+const material = {
+  label: 'Скачать материал экскурсии',
+  href: '/экскурсия Живые организмы весной.docx',
+};
 
 const safetyRules = [
   'Не отклоняйтесь от намеченного маршрута без разрешения учителя.',
@@ -84,6 +89,27 @@ const ExcursionSpringPage = () => {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <article className="rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream p-6 md:p-8">
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="font-body text-xs uppercase tracking-[0.14em] text-kaleo-terracotta">
+                Материалы
+              </p>
+              <p className="mt-2 font-body text-sm leading-relaxed text-kaleo-earth/80">
+                Документ с материалами экскурсии доступен для скачивания в формате Word.
+              </p>
+            </div>
+            <a
+              href={withBase(material.href)}
+              download
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-kaleo-terracotta/40 bg-kaleo-sand px-5 py-3 font-body text-xs uppercase tracking-[0.14em] text-kaleo-earth transition-colors hover:border-kaleo-terracotta hover:bg-kaleo-terracotta/10"
+            >
+              <ArrowDownToLine className="h-4 w-4 text-kaleo-terracotta" />
+              {material.label}
+            </a>
+          </div>
+        </article>
+
         <div className="grid gap-4 rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream p-6 md:grid-cols-4">
           <div>
             <p className="font-body text-xs uppercase tracking-[0.14em] text-kaleo-terracotta">Место</p>

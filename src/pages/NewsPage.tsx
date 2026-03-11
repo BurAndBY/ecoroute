@@ -1,5 +1,17 @@
-import { ArrowLeft, CalendarDays, Newspaper } from 'lucide-react';
+import { ArrowLeft, CalendarDays, Newspaper, Sparkles } from 'lucide-react';
 import { withBase } from '../lib/paths';
+
+const featuredNews = {
+  date: '28 января 2026',
+  title: 'Нам исполняется 10 лет!',
+  lead:
+    'Экологической тропе «Войди в природу другом» исполняется 10 лет. Юбилейный год станет поводом для новых встреч, публикаций, праздничных событий и совместных акций.',
+  content: [
+    'В юбилейный сезон мы будем делиться яркими моментами из истории экотропы, архивными кадрами и новыми достижениями.',
+    'Впереди тематические публикации, специальные встречи и праздничные активности для учащихся, педагогов и друзей проекта.',
+    'Следите за новостями экотропы, чтобы не пропустить анонсы, поздравления и новые материалы.',
+  ],
+};
 
 const newsItems = [
   {
@@ -28,18 +40,6 @@ const newsItems = [
       '«Сотрудничество с местным сообществом: создание эко-троп вместе».',
     ],
   },
-  {
-    date: '28 января 2026',
-    title: 'Нам исполняется 10 лет!',
-    lead:
-      'Экологической тропе «Войди в природу другом» исполняется 10 лет. Юбилейный год станет поводом для новых встреч, публикаций и совместных акций.',
-    content: [
-      'Присоединяйтесь к нам в социальных сетях, чтобы не пропустить ни одного момента нашего юбилея.',
-      'Мы будем делиться интересными фактами, фото и видео с мероприятий, а также проводить онлайн-акции и конкурсы.',
-      'Следите за нашим Instagram, чтобы быть в курсе всех новостей и участвовать в обсуждениях.',
-      'Ваша активность и участие помогут сделать это событие еще более значимым. Давайте вместе отпразднуем 10 лет нашей тропы и сделаем шаг к более устойчивому будущему.',
-    ],
-  },
 ];
 
 const NewsPage = () => {
@@ -66,13 +66,62 @@ const NewsPage = () => {
             Новости экологической тропы
           </h1>
           <p className="mt-5 max-w-3xl font-body text-base leading-relaxed text-kaleo-earth/80">
-            Раздел новостей собран как хроника событий экотропы: анонсы, юбилейные публикации,
-            мастер-классы и образовательные активности для педагогов и учащихся.
+            Здесь собраны юбилейные объявления, мастер-классы и важные события экотропы.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8">
+      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <article className="relative overflow-hidden rounded-[2rem] border border-kaleo-terracotta/20 bg-[linear-gradient(135deg,rgba(186,113,63,0.92),rgba(98,66,44,0.94))] px-6 py-8 text-kaleo-cream shadow-deep md:px-8 md:py-10">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.22),transparent_22%),radial-gradient(circle_at_18%_20%,rgba(255,222,173,0.18),transparent_18%),radial-gradient(circle_at_80%_70%,rgba(255,240,210,0.16),transparent_20%)]" />
+          <div className="relative">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-kaleo-cream/30 bg-kaleo-cream/10 px-4 py-2 font-body text-xs uppercase tracking-[0.16em]">
+                <Sparkles className="h-4 w-4" />
+                Юбилейный год
+              </span>
+              <span className="inline-flex items-center gap-2 font-body text-xs uppercase tracking-[0.16em] text-kaleo-cream/80">
+                <CalendarDays className="h-4 w-4" />
+                {featuredNews.date}
+              </span>
+            </div>
+
+            <div className="mt-6 grid gap-8 lg:grid-cols-[1.2fr,0.8fr] lg:items-center">
+              <div>
+                <h2 className="max-w-3xl font-display text-4xl md:text-5xl">
+                  {featuredNews.title}
+                </h2>
+                <p className="mt-5 max-w-3xl border-l-2 border-kaleo-cream/40 pl-4 font-body text-base leading-relaxed text-kaleo-cream/90">
+                  {featuredNews.lead}
+                </p>
+                <div className="mt-6 space-y-3">
+                  {featuredNews.content.map((line) => (
+                    <p key={line} className="font-body text-base leading-relaxed text-kaleo-cream/85">
+                      {line}
+                    </p>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative mx-auto flex aspect-square w-full max-w-sm items-center justify-center overflow-hidden rounded-[1.75rem] border border-kaleo-cream/20 bg-kaleo-cream/10 p-6 backdrop-blur-sm">
+                <div className="absolute -top-10 right-8 h-24 w-24 rounded-full bg-kaleo-cream/15 blur-2xl" />
+                <div className="absolute bottom-6 left-8 h-20 w-20 rounded-full bg-[#ffd59a]/20 blur-2xl" />
+                <div className="text-center">
+                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-kaleo-cream/25 bg-kaleo-cream/10">
+                    <Sparkles className="h-10 w-10" />
+                  </div>
+                  <p className="mt-5 font-display text-6xl">10</p>
+                  <p className="mt-2 font-body text-sm uppercase tracking-[0.28em] text-kaleo-cream/80">
+                    лет вместе с природой
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-4 pb-14 sm:px-6 lg:px-8">
         <div className="space-y-8">
           {newsItems.map((item, index) => (
             <article

@@ -119,16 +119,29 @@ const StationsGrid = () => {
               </div>
             </div>
 
-            <figure className="overflow-hidden rounded-[1.75rem] border border-kaleo-earth/10 bg-kaleo-sand/70 shadow-soft">
-              <img
-                src={withBase('/photo_2026-03-09_17-48-04.jpg')}
-                alt="Стенд экологической тропы"
-                className="h-full w-full object-cover"
-              />
-              <figcaption className="px-4 py-3 font-body text-sm text-kaleo-earth/70">
-                Схема маршрута экологической тропы
-              </figcaption>
-            </figure>
+            <div className="space-y-5">
+              <figure className="overflow-hidden rounded-[1.75rem] border border-kaleo-earth/10 bg-kaleo-sand/70 shadow-soft">
+                <img
+                  src={withBase('/photo_2026-03-09_17-48-04.jpg')}
+                  alt="Стенд экологической тропы"
+                  className="h-full w-full object-cover"
+                />
+                <figcaption className="px-4 py-3 font-body text-sm text-kaleo-earth/70">
+                  Схема маршрута экологической тропы
+                </figcaption>
+              </figure>
+
+              <figure className="overflow-hidden rounded-[1.75rem] border border-kaleo-earth/10 bg-kaleo-cream shadow-soft">
+                <img
+                  src={withBase('/IMG_3995.PNG')}
+                  alt="Фотография экологической тропы"
+                  className="h-full w-full object-cover"
+                />
+                <figcaption className="px-4 py-3 font-body text-sm text-kaleo-earth/70">
+                  Экотропа в кадре: еще один взгляд на пространство маршрута
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </article>
 

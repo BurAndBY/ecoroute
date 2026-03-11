@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { achievementsConfig } from '../config';
-import { BookOpenText, GraduationCap } from 'lucide-react';
+import { BookOpenText, FileText, GraduationCap } from 'lucide-react';
+import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ const Achievements = () => {
   const [showAllPublications, setShowAllPublications] = useState(false);
 
   const achievements = achievementsConfig.achievements;
+  const featuredDocuments = achievementsConfig.featuredDocuments;
   const publications = achievementsConfig.publications;
   const masterClasses = achievementsConfig.masterClasses;
   const displayedPublications = showAllPublications ? publications : publications.slice(0, 6);
@@ -155,6 +157,35 @@ const Achievements = () => {
         </div>
 
         <div className="mt-14 rounded-3xl border border-kaleo-cream/15 bg-kaleo-charcoal/25 p-4 md:p-6">
+          {featuredDocuments.length > 0 ? (
+            <div className="mb-6 rounded-2xl border border-kaleo-cream/10 bg-kaleo-earth/30 p-4 md:p-5">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="font-body text-xs uppercase tracking-[0.14em] text-kaleo-terracotta">
+                    {achievementsConfig.featuredDocumentsTitle}
+                  </p>
+                  <p className="mt-2 font-body text-sm leading-relaxed text-kaleo-sand/85">
+                    Дополнительные материалы по достижениям экотропы доступны для просмотра и скачивания.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {featuredDocuments.map((document) => (
+                    <a
+                      key={document.href}
+                      href={withBase(document.href)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-kaleo-terracotta/40 bg-kaleo-cream px-4 py-2 font-body text-xs uppercase tracking-[0.12em] text-kaleo-earth transition-colors hover:border-kaleo-terracotta hover:bg-kaleo-terracotta/10"
+                    >
+                      <FileText className="h-4 w-4 text-kaleo-terracotta" />
+                      {document.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : null}
+
           <div className="grid gap-4 md:grid-cols-3">
             <button
               type="button"
