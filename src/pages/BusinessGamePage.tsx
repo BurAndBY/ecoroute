@@ -12,6 +12,26 @@ const materials = [
   },
 ];
 
+const introImages = [
+  '/деловая/image1.jpeg',
+  '/деловая/image2.jpeg',
+  '/деловая/image3.jpeg',
+];
+
+const melodyImages = [
+  '/деловая/image4.jpeg',
+  '/деловая/image5.jpeg',
+  '/деловая/image6.jpeg',
+  '/деловая/image7.jpeg',
+];
+
+const taskImages = [
+  '/деловая/image8.jpeg',
+  '/деловая/image9.jpeg',
+  '/деловая/image10.png',
+  '/деловая/image11.jpeg',
+];
+
 const tasks = [
   {
     title: 'Эпиграф и настрой на работу',
@@ -140,6 +160,24 @@ const BusinessGamePage = () => {
         </div>
 
         <article className="mt-8 rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream p-6 md:p-8">
+          <h2 className="font-display text-3xl text-kaleo-earth">Визуальные материалы игры</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {introImages.map((image, index) => (
+              <figure
+                key={image}
+                className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60"
+              >
+                <img
+                  src={withBase(image)}
+                  alt={`Иллюстрация деловой игры ${index + 1}`}
+                  className="h-64 w-full object-contain bg-white p-2"
+                />
+              </figure>
+            ))}
+          </div>
+        </article>
+
+        <article className="mt-8 rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream p-6 md:p-8">
           <h2 className="font-display text-3xl text-kaleo-earth">Цель и задачи</h2>
           <p className="mt-4 font-body text-sm leading-relaxed text-kaleo-earth/85">
             Цель: создать условия для развития профессиональной компетентности педагогов по
@@ -197,6 +235,20 @@ const BusinessGamePage = () => {
               <li key={item}>{item}</li>
             ))}
           </ul>
+          <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {melodyImages.map((image, index) => (
+              <figure
+                key={image}
+                className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60"
+              >
+                <img
+                  src={withBase(image)}
+                  alt={`Иллюстрация для игрового задания ${index + 1}`}
+                  className="h-48 w-full object-contain bg-white p-2"
+                />
+              </figure>
+            ))}
+          </div>
         </article>
 
         <article className="mt-8 rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream p-6 md:p-8">
@@ -209,6 +261,20 @@ const BusinessGamePage = () => {
             <p className="font-body text-sm leading-relaxed text-kaleo-earth/85">
               Ответ: дуэль не состоялась, а предложенное оружие можно назвать бактериологическим.
             </p>
+          </div>
+          <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {taskImages.map((image, index) => (
+              <figure
+                key={image}
+                className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60"
+              >
+                <img
+                  src={withBase(image)}
+                  alt={`Иллюстрация к практическому заданию ${index + 1}`}
+                  className="h-48 w-full object-contain bg-white p-2"
+                />
+              </figure>
+            ))}
           </div>
         </article>
       </section>

@@ -6,6 +6,14 @@ const material = {
   href: '/БИОЛАБ.docx',
 };
 
+const labImages = [
+  {
+    src: '/БИОЛАБ/image1.png',
+    alt: 'Иллюстрация к занятию «Биологическая лаборатория»',
+    caption: 'Иллюстративный материал к занятию «Биологическая лаборатория»',
+  },
+];
+
 const warmupQuestions = {
   teamOne: [
     'Где у человека находится самый маленький сустав?',
@@ -160,6 +168,27 @@ const BioLabPage = () => {
             <p className="mt-2 font-body text-sm text-kaleo-earth">2 группы учащихся</p>
           </div>
         </div>
+
+        <article className="mt-8 rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream p-6 md:p-8">
+          <h2 className="font-display text-3xl text-kaleo-earth">Иллюстрация занятия</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-1">
+            {labImages.map((image) => (
+              <figure
+                key={image.src}
+                className="overflow-hidden rounded-xl border border-kaleo-earth/10 bg-kaleo-sand/60"
+              >
+                <img
+                  src={withBase(image.src)}
+                  alt={image.alt}
+                  className="w-full object-contain bg-white p-2"
+                />
+                <figcaption className="px-4 py-3 font-body text-sm text-kaleo-earth/70">
+                  {image.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </article>
 
         <article className="mt-8 rounded-2xl border border-kaleo-earth/10 bg-kaleo-cream p-6 md:p-8">
           <h2 className="font-display text-3xl text-kaleo-earth">Цель и задачи</h2>
