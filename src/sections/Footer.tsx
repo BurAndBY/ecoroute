@@ -96,11 +96,6 @@ const Footer = () => {
         className="absolute inset-0 opacity-30"
         style={{ willChange: 'transform' }}
       >
-        <img
-          src={withBase('/footer-cabin.jpg')}
-          alt=""
-          className="w-full h-full object-cover"
-        />
         <div className="absolute inset-0 bg-gradient-to-b from-kaleo-charcoal via-kaleo-charcoal/80 to-kaleo-charcoal" />
       </div>
 
