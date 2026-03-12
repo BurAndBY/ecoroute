@@ -203,7 +203,11 @@ const GridItem = ({
         ) : null}
 
         {(hideImageCompletely || hideImageOnMobile) && showSingleLink ? (
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div
+            className={`mt-8 flex flex-wrap gap-3 ${
+              hideImageOnMobile && !hideImageCompletely ? 'lg:hidden' : ''
+            }`}
+          >
             <a
               href={resolvedItemHref}
               target={itemHrefIsExternal || itemHrefIsDocument ? '_blank' : undefined}
