@@ -15,6 +15,14 @@ const featuredNews = {
 
 const newsItems = [
   {
+    date: '27 марта 2026',
+    title: '10 лет экологической тропе!',
+    lead:
+      '27 марта 2016 года разработана концепция экологической тропы, которая открылась 1 сентября. Сегодня, спустя 10 лет, мы отмечаем этот юбилей вместе с ребятами! Огромное спасибо всем за поддержку! Пусть наша тропа вдохновляет на новые свершения😇',
+    image: '/IMG_4511.JPG',
+    content: [],
+  },
+  {
     date: '24 февраля 2026',
     title: 'Мастер-классы для учащихся',
     lead:
@@ -132,10 +140,17 @@ const NewsPage = () => {
                 <CalendarDays className="h-5 w-5" />
                 <p className="font-body text-xs uppercase tracking-[0.16em]">{item.date}</p>
               </div>
-              <h2 className="mt-4 font-display text-3xl text-kaleo-earth md:text-4xl">{item.title}</h2>
-              <p className="mt-4 border-l-2 border-kaleo-terracotta/40 pl-4 font-body text-base leading-relaxed text-kaleo-earth/85">
-                {item.lead}
-              </p>
+        <h2 className="mt-4 font-display text-3xl text-kaleo-earth md:text-4xl">{item.title}</h2>
+        {item.image && (
+          <img
+            src={withBase(item.image)}
+            alt={item.title}
+            className="mt-5 w-full max-w-md rounded-2xl border border-kaleo-earth/10"
+          />
+        )}
+        <p className="mt-4 border-l-2 border-kaleo-terracotta/40 pl-4 font-body text-base leading-relaxed text-kaleo-earth/85">
+          {item.lead}
+        </p>
               <div className="mt-6 space-y-3">
                 {item.content.map((line) => (
                   <p
