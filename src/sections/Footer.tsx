@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, Instagram, Facebook, Send } from 'lucide-react';
 import { footerConfig } from '../config';
-import { withBase } from '../lib/paths';
 
 gsap.registerPlugin(ScrollTrigger);
 
