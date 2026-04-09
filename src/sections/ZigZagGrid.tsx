@@ -20,6 +20,7 @@ const GridItem = ({
 
   const itemHrefIsExternal = item.href ? /^https?:\/\//.test(item.href) : false;
   const itemHrefIsDocument = item.href ? /\.(pdf|docx?)$/i.test(item.href) : false;
+  const itemHrefShouldDownload = Boolean(item.href) && itemHrefIsDocument && !itemHrefIsExternal;
   const showSingleLink = Boolean(item.href) && (!item.links || item.links.length === 0);
   const useContainedImage = item.id === 'chatbot' || item.id === 'methodology';
   const hideImageOnMobile = item.id === 'chatbot';
@@ -120,6 +121,7 @@ const GridItem = ({
                 href={resolvedItemHref}
                 target={itemHrefIsExternal || itemHrefIsDocument ? '_blank' : undefined}
                 rel={itemHrefIsExternal || itemHrefIsDocument ? 'noopener noreferrer' : undefined}
+                download={itemHrefShouldDownload}
                 className="inline-flex min-w-[16rem] items-center justify-center gap-3 rounded-full border border-kaleo-terracotta bg-kaleo-terracotta px-8 py-4 font-body text-base uppercase tracking-[0.14em] text-kaleo-cream transition-colors hover:bg-kaleo-earth hover:border-kaleo-earth"
               >
                 {item.ctaLabel ?? 'Подробнее'}
@@ -208,6 +210,7 @@ const GridItem = ({
               href={resolvedItemHref}
               target={itemHrefIsExternal || itemHrefIsDocument ? '_blank' : undefined}
               rel={itemHrefIsExternal || itemHrefIsDocument ? 'noopener noreferrer' : undefined}
+              download={itemHrefShouldDownload}
               className="inline-flex min-w-[16rem] items-center justify-center gap-3 rounded-full border border-kaleo-terracotta bg-kaleo-terracotta px-8 py-4 font-body text-base uppercase tracking-[0.14em] text-kaleo-cream transition-colors hover:bg-kaleo-earth hover:border-kaleo-earth"
             >
               {item.ctaLabel ?? 'Подробнее'}
