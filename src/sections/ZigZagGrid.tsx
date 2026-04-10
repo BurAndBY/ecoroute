@@ -92,7 +92,7 @@ const GridItem = ({
         <div
           ref={imageContainerRef}
           className={`relative overflow-hidden rounded-3xl ${
-            hideImageOnMobile ? 'hidden md:block ' : ''
+            hideImageOnMobile ? 'hidden lg:block ' : ''
           }${
             item.reverse ? 'lg:order-2' : 'lg:order-1'
           }`}
@@ -204,8 +204,12 @@ const GridItem = ({
           </div>
         ) : null}
 
-        {(hideImageCompletely || (hideImageOnMobile && item.id !== 'chatbot')) && showSingleLink ? (
-          <div className="mt-8 flex flex-wrap gap-3">
+        {(hideImageCompletely || hideImageOnMobile) && showSingleLink ? (
+          <div
+            className={`mt-8 flex flex-wrap gap-3 ${
+              hideImageOnMobile && !hideImageCompletely ? 'lg:hidden' : ''
+            }`}
+          >
             <a
               href={resolvedItemHref}
               target={itemHrefIsExternal || itemHrefIsDocument ? '_blank' : undefined}
